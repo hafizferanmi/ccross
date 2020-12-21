@@ -9,7 +9,7 @@ const HeaderWrapper = styled.header`
   background-color: #272A2D;
   padding: 0 20px;
   height: 64px;
-  border-bottom: 2px solid #9AC802;
+  border-bottom: 1.3px solid ${props => props.theme.colors.UIgreen};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,12 +28,14 @@ const LogoButtonWrapper = styled.div`
     border-bottom-right-radius: 0;
     background-color: white;
     color: #111112;
+    border-right: none;
   }
 
   & >  span:last-of-type {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     margin-left: 0;
+    border-left: none;
   }
 `
 

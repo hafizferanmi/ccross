@@ -1,6 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
+import './App.css'
+import styled, { ThemeProvider } from 'styled-components'
 import Header from './Components/Header'
+import Sidebar from './Components/Sidebar'
+import theme from './theme'
 
 const Page = styled.section`
   background-color: #1E2122;
@@ -8,15 +11,23 @@ const Page = styled.section`
   height: 100vh;
 `
 
+const PageContentWrapper = styled.aside`
+  display: flex;
+  width: 260px;
+  background-color: #181B1C;
+`
+
 const App = () => {
   return (
-    <Page>
-      <Header />
-      <div>
-        {/* <Sidebar />
-        <ContentBody /> */}
-      </div>
-    </Page>
+    <ThemeProvider theme={theme}>
+      <Page>
+        <Header />
+        <PageContentWrapper>
+          <Sidebar />
+          {/* <ContentBody /> */}
+        </PageContentWrapper>
+      </Page>
+    </ThemeProvider>
   )
 }
 
