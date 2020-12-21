@@ -1,6 +1,7 @@
 const theme = {
   colors: {
-    UIgreen: '#9AC802'
+    UIgreen: '#9AC802',
+    UIgrey: '#666E79'
   }
 }
 

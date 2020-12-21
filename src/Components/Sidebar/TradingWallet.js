@@ -22,7 +22,6 @@ const Ammount = styled.div`
 const SmallAmmount = styled(Ammount)`
   font-size: 14px;
   line-height: 20px;
-  font-weight: normal;
 `
 
 const TradingWrapper = styled.div`
