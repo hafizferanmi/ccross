@@ -20,6 +20,8 @@ const FilterWrapper = styled.div`
     line-height: 10px;
     border: 1px solid ${props => props.theme.colors.UIgreen};
     border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
     padding: 3px 15px;
   }
 `
@@ -41,24 +43,36 @@ const UnitsWrapper = styled.div`
 const PercentWrapper = styled.div`
   display: flex;
   border: 0.1px solid #9AC802;
-  
   border-radius: 4px;
+  cursor: pointer;
+`
 
-  & > span {
-    width: 40px;
-    font-size: 12px;
-    line-height: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 5px;
-    color: ${props => props.theme.colors.UIgreen};
+const CurrencyType = styled.span`
+  width: 40px;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 5px;
+  font-weight: bold;
+  border-radius: 4px;
+  color: ${props => props.theme.colors.UIgreen};
 
-    ${props => props.active && css`
-      background-color: ${props => props.theme.colors.UIgreen};
-      color: black;
-    `}
+  &:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
+
+  &:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  ${props => props.active && css`
+    background-color: ${props => props.theme.colors.UIgreen};
+    color: black;
+  `}
 `
 
 const SortByWrapper = styled.div`
@@ -77,12 +91,20 @@ const SortByWrapper = styled.div`
     line-height: 16px;
     background: transparent;
     color: white;
+    cursor: pointer;
     padding: 3px;
     border-radius: 4px;
   }
 `
 
+const CURRENCY_TYPE = Object.freeze({
+  PERCENT: 'PERCENT',
+  USD: 'USD'
+})
+
 const BodyHeader = () => {
+  const [currencyType, setCurrencyType] = React.useState(CURRENCY_TYPE.USD)
+  const handleChangeCurrencyType = type => setCurrencyType(type)
   return (
     <HeaderWrapper>
       <FilterWrapper>
@@ -93,8 +115,8 @@ const BodyHeader = () => {
         <UnitsWrapper>
           <div>Units:</div>
           <PercentWrapper>
-            <span>%</span>
-            <span>$</span>
+            <CurrencyType active={currencyType === CURRENCY_TYPE.PERCENT} onClick={() => handleChangeCurrencyType(CURRENCY_TYPE.PERCENT)}>%</CurrencyType>
+            <CurrencyType active={currencyType === CURRENCY_TYPE.USD} onClick={() => handleChangeCurrencyType(CURRENCY_TYPE.USD)}>$</CurrencyType>
           </PercentWrapper>
         </UnitsWrapper>
         <SortByWrapper>

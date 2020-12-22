@@ -14,14 +14,18 @@ const SortButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
+  padding-right: 15px;
 `
 
 const SortButton = styled.div`
   color: ${props => props.theme.colors.UIgrey};
   font-size: 12px;
   cursor: pointer;
+  font-weight: bold;
   ${props => props.active && css`
-    padding: 5px 10px;
+    padding: 3px 10px;
+    color: #111112;
+    border-radius: 5px;
     background-color: ${props => props.theme.colors.UIgreen}
   `}
 `
@@ -54,14 +58,25 @@ const StatsValue = styled.div`
   line-height: 24px;
 `
 
-const sortBy = ['last', 'day', 'week', 'month', 'all']
+const sortBy = Object.freeze({
+  LAST: 'last',
+  DAY: 'day',
+  WEEK: 'week',
+  MONTH: 'month',
+  ALL: 'all'
+})
+
+const sortbyArray = Object.values(sortBy)
 
 const TradingHistory = () => {
+  const [selectedSortBy, setSelectedSortBy] = React.useState(sortBy.WEEK)
+  const handleChangeSortBy = (by) => setSelectedSortBy(by)
+
   return (
     <TradingHistoryWrapper>
       <TradeHeader title='Trading history' icon={History} />
       <SortButtonWrapper>
-        {sortBy.map(history => <SortButton key={history}>{history}</SortButton>)}
+        {sortbyArray.map(by => <SortButton active={selectedSortBy === by} onClick={() => handleChangeSortBy(by)} key={by}>{by}</SortButton>)}
       </SortButtonWrapper>
       <HistoryStatsWrapper>
         <div>

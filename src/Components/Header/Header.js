@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import logo from '../../assets/logo.png'
 import dp from '../../assets/dp.png'
 import SearchIcon from '../svg/SearchIcon'
@@ -26,14 +26,12 @@ const Logo = styled.img`
   height: 40px;
 `
 
-const LogoButtonWrapper = styled.div`
+const PlansWrapper = styled.div`
   margin-left: 20px;
 
   & > span:first-of-type {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    background-color: white;
-    color: #111112;
     border-right: none;
   }
 
@@ -57,12 +55,12 @@ const HeaderButton = styled.span`
   font-weight: bold;
   text-transform: capitalize;
 
-  &.active {
+  ${props => props.active && css`
     color: #111112;
     background: white;
-  }
+  `}
 
-  &::first-of-type {
+  &:first-of-type {
     margin-left: 0
   }
 `
@@ -103,21 +101,33 @@ const Pill = styled.span`
   right: -5px;
 `
 
-const logoButtons = ['Training Mode', 'Live Mode']
+const TYPES = ['Show All', 'Crypto', 'Commodities', 'Stock', 'Index', 'Currency']
 
-const centerButtons = ['Show All', 'Crypto', 'Commodities', 'Stock', 'Index', 'Currency']
+const PLAN = Object.freeze({
+  TRAINING: 'TRAINING',
+  LIVE: 'LIVE'
+})
 
 const Header = () => {
+  const [activePlan, setActivePlan] = React.useState(PLAN.TRAINING)
+  const [activeType, setActiveType] = React.useState()
+  const handleChangePlan = (plan) => setActivePlan(plan)
+  const handleChangeType = type => setActiveType(type)
+
   return (
     <HeaderWrapper>
       <LogoWrapper>
         <Logo src={logo} />
-        <LogoButtonWrapper>
-          {logoButtons.map(button => <HeaderButton key={button}>{button}</HeaderButton>)}
-        </LogoButtonWrapper>
+        <PlansWrapper>
+          <HeaderButton active={activePlan === PLAN.TRAINING} onClick={() => handleChangePlan(PLAN.TRAINING)}>Training Mode</HeaderButton>
+          <HeaderButton active={activePlan === PLAN.LIVE} onClick={() => handleChangePlan(PLAN.LIVE)}>Live mode</HeaderButton>
+        </PlansWrapper>
       </LogoWrapper>
       <div>
-        {centerButtons.map(button => <HeaderButton key={button}>{button}</HeaderButton>)}
+        {TYPES.map(type =>
+          <HeaderButton active={activeType === type} onClick={() => handleChangeType(type)} key={type}>
+            {type}
+          </HeaderButton>)}
       </div>
       <IconsWrapper>
         <SearchIcon />
