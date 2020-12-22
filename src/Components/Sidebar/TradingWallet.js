@@ -69,10 +69,10 @@ const TradingWallet = () => {
         <SubTitle>Holding</SubTitle>
         <AmmountButtonWrapper>
           <SmallAmmount>
-          $ 4, 102.00
+            $ 4, 102.00
           </SmallAmmount>
           <TradingButton secondary>
-          BUY DAI
+            BUY DAI
           </TradingButton>
         </AmmountButtonWrapper>
       </HoldingWrapper>

@@ -114,6 +114,7 @@ const VerticalGraph = styled.div`
 
 const TiltedGraph = styled.div`
   flex-flow: 1;
+  transform: rotate(90deg);
 `
 
 const VPFCard = ({ ammount, hanging }) => {

@@ -8,8 +8,11 @@
     "@testing-library/user-event": "^12.1.10",
     "d3": "^6.3.1",
     "react": "^17.0.1",
+    "react-chart": "^0.0.1",
+    "react-charts": "^2.0.0-beta.7",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
+    "recharts": "^1.8.5",
     "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"
   },
