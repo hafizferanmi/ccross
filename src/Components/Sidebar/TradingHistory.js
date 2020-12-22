@@ -1,6 +1,6 @@
 import React from 'react'
 import TradeHeader from './TradeHeader'
-import SGraph from '../svg/SGraph'
+import History from '../svg/History'
 import styled, { css } from 'styled-components'
 
 const TradingHistoryWrapper = styled.div`
@@ -59,7 +59,7 @@ const sortBy = ['last', 'day', 'week', 'month', 'all']
 const TradingHistory = () => {
   return (
     <TradingHistoryWrapper>
-      <TradeHeader title='Trading history' icon={SGraph} />
+      <TradeHeader title='Trading history' icon={History} />
       <SortButtonWrapper>
         {sortBy.map(history => <SortButton key={history}>{history}</SortButton>)}
       </SortButtonWrapper>

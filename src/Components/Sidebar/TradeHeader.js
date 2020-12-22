@@ -24,7 +24,7 @@ const TradeHeader = ({ icon: Icon, title }) => {
   return (
     <Wrapper>
       <IconWrapper>
-        <Icon color='' />
+        <Icon />
         <Text>{title}</Text>
       </IconWrapper>
       <ArrowRight />

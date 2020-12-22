@@ -1,6 +1,6 @@
 import React from 'react'
 import TradeHeader from './TradeHeader'
-import SGraph from '../svg/SGraph'
+import Wallet from '../svg/Wallet'
 import styled, { css } from 'styled-components'
 
 const TradingWalletWrapper = styled.div`
@@ -52,7 +52,7 @@ const TradingButton = styled.button`
 const TradingWallet = () => {
   return (
     <TradingWalletWrapper>
-      <TradeHeader title='Trading wallet' icon={SGraph} />
+      <TradeHeader title='Trading wallet' icon={Wallet} />
       <TradingWrapper>
         <SubTitle>Trading</SubTitle>
         <AmmountButtonWrapper>

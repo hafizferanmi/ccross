@@ -1,11 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import logo from '../../assets/logo.png'
+import dp from '../../assets/dp.png'
 import SearchIcon from '../svg/SearchIcon'
 import StartHeadIcon from '../svg/StartHead'
 import GradutatingHeadIcon from '../svg/gradutatinghead'
 
 const HeaderWrapper = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
   background-color: #272A2D;
   padding: 0 20px;
   height: 64px;
@@ -63,8 +69,8 @@ const HeaderButton = styled.span`
 
 const ProfilePic = styled.img`
   border-radius: 50%;
-  height: 40px;
-  width: 40px;
+  height: 32px;
+  width: 32px;
   margin-left: 25px;
 `
 
@@ -90,7 +96,7 @@ const Pill = styled.span`
   position: absolute;
   font-size: 10px;
   color: white;
-  display: 'flex';
+  display: flex;
   justify-content: center;
   align-items: center;
   top: -5px;
@@ -118,8 +124,8 @@ const Header = () => {
         <StartHeadIcon />
         <GradutatingHeadIcon />
         <div style={{ position: 'relative' }}>
-          <ProfilePic src={logo} />
-          <Pill>7</Pill>
+          <ProfilePic src={dp} />
+          <Pill>12</Pill>
         </div>
       </IconsWrapper>
     </HeaderWrapper>

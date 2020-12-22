@@ -5,11 +5,12 @@ import TradingWallet from './TradingWallet'
 import OpenTrades from './OpenTrades'
 
 const SidebarWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  /* padding-top: 20px;
-  padding-bottom: 20px; */
+  width: 260px;
+  position: fixed;
+  height: 100%;
+  background: #181B1C;
+  top: 65px;
+  left: 0;
   padding: 20px;
 `
 
