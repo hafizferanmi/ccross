@@ -56,7 +56,7 @@ const HeaderButton = styled.span`
   text-transform: capitalize;
 
   ${props => props.active && css`
-    color: #111112;
+    color: ${props => props.theme.colors.TextBlack};
     background: white;
   `}
 

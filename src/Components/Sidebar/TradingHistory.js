@@ -2,6 +2,7 @@ import React from 'react'
 import TradeHeader from './TradeHeader'
 import History from '../svg/History'
 import styled, { css } from 'styled-components'
+import VerticalGraph from '../PageBody/VerticalGraph'
 
 const TradingHistoryWrapper = styled.div`
   margin-bottom: 30px;
@@ -24,7 +25,7 @@ const SortButton = styled.div`
   font-weight: bold;
   ${props => props.active && css`
     padding: 3px 10px;
-    color: #111112;
+    color: ${props => props.theme.colors.TextBlack};
     border-radius: 5px;
     background-color: ${props => props.theme.colors.UIgreen}
   `}
@@ -32,7 +33,6 @@ const SortButton = styled.div`
 
 const GraphWrapper = styled.div`
   height: 100px;
-  background-color: white;
 `
 
 const HistoryStatsWrapper = styled.div`
@@ -88,7 +88,9 @@ const TradingHistory = () => {
           <StatsValue>+21.5%</StatsValue>
         </div>
       </HistoryStatsWrapper>
-      <GraphWrapper>Graph comes here</GraphWrapper>
+      <GraphWrapper>
+        <VerticalGraph />
+      </GraphWrapper>
     </TradingHistoryWrapper>
   )
 }

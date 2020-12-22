@@ -117,7 +117,7 @@ const TiltedGraph = styled.div`
   transform: rotate(90deg);
 `
 
-const VPFCard = ({ ammount, hanging }) => {
+const VPFCard = ({ ammount, count, data }) => {
   return (
     <LinearBackground>
       <CardWrapper>
@@ -139,17 +139,17 @@ const VPFCard = ({ ammount, hanging }) => {
             <div>Outcome in 6h 41m</div>
           </OutcomeWrapper>
           <VerticalGraph>
-            <PlottedVerticalGraph />
+            <PlottedVerticalGraph data={data} />
           </VerticalGraph>
           <TiltedGraph>
-            <PlotedTiltedGraph />
+            <PlotedTiltedGraph data={data} />
           </TiltedGraph>
         </GraphWrapper>
         <CommitmentWrapper>
           <Title>{ammount}</Title>
           <Desc>Total commitment funds</Desc>
         </CommitmentWrapper>
-        {hanging && <Hanging>{hanging}</Hanging>}
+        {count && <Hanging>{count}</Hanging>}
       </CardWrapper>
     </LinearBackground>
   )

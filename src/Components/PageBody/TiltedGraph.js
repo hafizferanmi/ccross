@@ -2,22 +2,7 @@ import React from 'react'
 import { AreaChart, Area } from 'recharts'
 import theme from '../../theme'
 
-const data = [
-  { uv: 20 },
-  { uv: 140 },
-  { uv: 10 },
-  { uv: 50 },
-  { uv: 5 },
-  { uv: 200 },
-  { uv: 10 },
-  { uv: 150 },
-  { uv: 15 },
-  { uv: 0 }
-]
-
-const TiltedGraph = () => {
-  console.log('Loading loeing')
-
+const TiltedGraph = ({ data }) => {
   return (
     <AreaChart
       width={50}
