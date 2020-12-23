@@ -5,6 +5,7 @@ import SGraph from '../svg/SGraph'
 
 const OpenTradeWrapper = styled.div`
   margin-bottom: 20px;
+  margin-top: 20px;
   border-bottom: 1px solid #36393C;
   padding-bottom: 20px;
 `
