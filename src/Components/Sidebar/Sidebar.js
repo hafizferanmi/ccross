@@ -9,7 +9,7 @@ const SidebarWrapper = styled.section`
   position: fixed;
   height: 100%;
   background: #181B1C;
-  top: 64px;
+  top: ${props => props.theme.dimension.headerHeight};
   left: 0;
   padding: 20px;
 `

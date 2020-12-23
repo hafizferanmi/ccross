@@ -2,7 +2,7 @@ import React from 'react'
 import TradeHeader from './TradeHeader'
 import History from '../svg/History'
 import styled, { css } from 'styled-components'
-import VerticalGraph from '../PageBody/VerticalGraph'
+import HistoryGraph from './HistoryGraph'
 
 const TradingHistoryWrapper = styled.div`
   margin-bottom: 30px;
@@ -89,7 +89,7 @@ const TradingHistory = () => {
         </div>
       </HistoryStatsWrapper>
       <GraphWrapper>
-        <VerticalGraph />
+        <HistoryGraph />
       </GraphWrapper>
     </TradingHistoryWrapper>
   )
