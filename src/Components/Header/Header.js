@@ -14,7 +14,7 @@ const HeaderWrapper = styled.header`
   width: 100vw;
   background-color: #272A2D;
   padding: 0 20px;
-  height: 64px;
+  height: ${props => props.theme.dimension.headerHeight};
   border-bottom: 1.3px solid ${props => props.theme.colors.UIgreen};
   display: flex;
   align-items: center;
@@ -90,7 +90,7 @@ const Pill = styled.span`
   border-radius: 50%;
   width: 16px;
   height: 16px;
-  background-color: #1C9DE8;
+  background-color: ${props => props.theme.colors.UIBlue};
   position: absolute;
   font-size: 10px;
   color: white;

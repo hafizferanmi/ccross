@@ -32,7 +32,7 @@ const SortButton = styled.div`
 `
 
 const GraphWrapper = styled.div`
-  height: 100px;
+  /* height: 200px; */
 `
 
 const HistoryStatsWrapper = styled.div`

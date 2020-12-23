@@ -65,7 +65,7 @@ const Hanging = styled.div`
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
   z-index: 100;
-  background-color: #1C9DE8;
+  background-color: ${props => props.theme.colors.UIBlue};
   width: 24px;
   height: 20px;
   font-size: 9px;
